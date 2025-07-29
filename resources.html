@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <title>Resources | SafeSteps</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fef6ff;
+      color: #333;
+    }
+
+    nav {
+      background-color: #dcd0ff;
+      padding: 1rem 2rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #4b0082;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b0082;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #6a0dad;
+    }
+
+    header {
+      background-color: white;
+      color: #4b0082;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .resources-container {
+      padding: 40px 20px;
+      text-align: left;
+    }
+
+    .resources-container h2 {
+      font-size: 32px;
+      color: #6a0dad;
+      margin-bottom: 10px;
+       text-align: center;
+    }
+
+    .resources-container p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .resource-section {
+      margin-bottom: 40px;
+    }
+
+    .resource-section h3 {
+      color: #8245a6;
+      border-left: 6px solid #caa6ff;
+      padding-left: 12px;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .resource-section ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .resource-section ul li {
+      background-color: #f0e6ff;
+      padding: 15px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      line-height: 1.6;
+      transition: background-color 0.3s ease;
+    }
+
+    .resource-section ul li:hover {
+      background-color: #e4d4ff;
+    }
+
+    .resource-section ul li a {
+      text-decoration: none;
+      color: #7a3eb1;
+      font-weight: bold;
+    }
+
+    .resource-section ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .filter-btn {
+      background-color: #a678f2;
+      color: white;
+      padding: 8px 16px;
+      margin: 6px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .filter-btn:hover {
+      background-color: #8e5edc;
+    }
+
+    input#searchInput {
+      padding: 10px 15px;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 8px;
+      border: 1px solid #caa6ff;
+      font-size: 16px;
+    }
+
+    .download-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.download-list li {
+  background-color: #f3e8ff;
+  border-left: 5px solid #b28ddb;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.download-list li:hover {
+  background-color: #e5d3ff;
+}
+
+.download-list li a {
+  background-color: #b28ddb;
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.download-list li a:hover {
+  background-color: #a077cc;
+}
+
+
+    /* Footer */
+    footer {
+      background-color: #dcd0ff;
+      color: #4b0082;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">SafeSteps</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="selfdefense.html">Self-Defense</a>
+      <a href="legalrights.html">Legal Rights</a>
+      <a href="#">Emergency Help</a>
+      <a href="resources.html">Resources</a>
+    </div>
+  </nav>
+
+  <div class="resources-container">
+    <h2>Curated Tools, Apps & Guides</h2>
+
+    <!-- 🔍 Search Bar -->
+    <div style="text-align: center; margin-top: 20px;">
+      <input type="text" id="searchInput" placeholder="Search resources...">
+    </div>
+
+    <!-- 🔘 Filter Buttons -->
+    <div style="text-align: center; margin-top: 20px;">
+      <button onclick="filterCategory('all')" class="filter-btn">Show All</button>
+      <button onclick="filterCategory('emergency')" class="filter-btn">Emergency</button>
+      <button onclick="filterCategory('apps')" class="filter-btn">Apps</button>
+      <button onclick="filterCategory('ngos')" class="filter-btn">NGOs</button>
+      <button onclick="filterCategory('defense')" class="filter-btn">Self-Defense</button>
+      <button onclick="filterCategory('cyber')" class="filter-btn">Cyber Safety</button>
+      <button onclick="filterCategory('legal')" class="filter-btn">Legal Help</button>
+    </div>
+
+    <!-- Emergency Contacts -->
+    <div class="resource-section">
+      <h3>🚨 Emergency Contacts (India)</h3>
+      <ul>
+        <li><strong>National Emergency Number:</strong> 112</li>
+        <li><strong>Police:</strong> 100</li>
+        <li><strong>Ambulance:</strong> 102</li>
+        <li><strong>Women’s Helpline:</strong> 1091</li>
+        <li><strong>Childline (Children in distress):</strong> 1098</li>
+        <li><strong>Cybercrime Reporting Portal:</strong> <a href="https://cybercrime.gov.in" target="_blank">cybercrime.gov.in</a></li>
+      </ul>
+    </div>
+
+    <!-- Safety Apps -->
+    <div class="resource-section">
+      <h3>Recommended Safety Apps</h3>
+      <ul>
+        <li><strong>Raksha</strong> – Emergency alert app for women (Android)</li>
+        <li><strong>My Safetipin</strong> – Helps evaluate safety of areas using crowd-sourced data</li>
+        <li><strong>bSafe</strong> – Live GPS tracking and SOS alarm with video/audio</li>
+        <li><strong>112 India</strong> – Integrated govt. app for emergency support (Android/iOS)</li>
+      </ul>
+    </div>
+
+    <!-- NGOs -->
+    <div class="resource-section">
+      <h3>NGOs and Organizations</h3>
+      <ul>
+        <li><strong>Shakti Shalini:</strong> A Delhi-based NGO offering emergency support and shelter. <a href="http://shaktishalini.org/" target="_blank">Visit website</a></li>
+        <li><strong>Sakhi One Stop Centres:</strong> Govt-supported centers offering legal, medical & counseling help. <a href="https://www.ncw.nic.in/helplines" target="_blank">Details here</a></li>
+        <li><strong>Majlis Legal Centre:</strong> Mumbai-based organization providing legal support to women. <a href="https://majlislaw.com/" target="_blank">Visit website</a></li>
+        <li><strong>Breakthrough India:</strong> Works to end violence against women via campaigns. <a href="https://inbreakthrough.org/" target="_blank">Visit website</a></li>
+      </ul>
+    </div>
+
+    <!-- Self-Defense -->
+    <div class="resource-section">
+      <h3>Self-Defense & Awareness Training</h3>
+      <ul>
+        <li><a href="https://www.udemy.com/course/self-defense-for-women/" target="_blank">Udemy: Self-Defense for Women</a> – Learn practical skills at home</li>
+        <li><a href="https://www.youtube.com/user/KravMagaWorldwide" target="_blank">Krav Maga YouTube Channel</a> – Real-life defense tutorials</li>
+        <li><a href="https://www.redcross.org/get-help/how-to-prepare-for-emergencies.html" target="_blank">Red Cross Guide</a> – Preparedness for emergencies</li>
+      </ul>
+    </div>
+
+    <!-- Cyber Safety -->
+    <div class="resource-section">
+      <h3>Online Safety & Cybersecurity</h3>
+      <ul>
+        <li><a href="https://staysafeonline.org/" target="_blank">StaySafeOnline.org</a> – Internet safety tips</li>
+        <li><a href="https://cyberaware.gov.in/" target="_blank">Cyber Aware (India)</a> – Cyber hygiene info</li>
+        <li><a href="https://www.consumer.ftc.gov/topics/privacy-identity-online-security" target="_blank">FTC: Privacy & Security</a></li>
+      </ul>
+    </div>
+
+    <!-- Legal -->
+    <div class="resource-section">
+      <h3>Legal Rights & Help</h3>
+      <ul>
+        <li><a href="https://ncpcr.gov.in/" target="_blank">NCPCR</a> – Child rights commission</li>
+        <li><a href="https://ncw.nic.in/" target="_blank">NCW</a> – Report women’s issues online</li>
+        <li><a href="https://www.indiankanoon.org/" target="_blank">Indian Kanoon</a> – Search Indian laws</li>
+      </ul>
+    </div>
+  </div>
+
+    <div class="resource-section" id="downloads">
+  <h3>Downloadable Guides & Checklists</h3>
+  <ul class="download-list">
+    <li>
+      <strong>Legal Rights Guide (India)</strong>
+      <a href="resources/downloads/legal-rights-guide.pdf" download>Download PDF</a>
+    </li>
+    <li>
+      <strong>Emergency Preparedness Checklist</strong>
+      <a href="resources/downloads/emergency-checklist.pdf" download>Download PDF</a>
+    </li>
+    <li>
+      <strong>Cyber Safety Tips (Everyday Users)</strong>
+      <a href="resources/downloads/cyber-safety-tips.pdf" download>Download PDF</a>
+    </li>
+  </ul>
+</div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a> | 
+      <a href="tips.html">Tips</a> | 
+      <a href="legalrights.html">Legal</a> | 
+      <a href="#">Emergency</a> | 
+      <a href="resources.html">Resources</a>
+    </div>
+    <p>Made with ❤️ by Shreya Chakraborty</p>
+    <small>Disclaimer: For awareness purposes only. Not a legal substitute.</small>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.getElementById('searchInput').addEventListener('keyup', function () {
+      const searchTerm = this.value.toLowerCase();
+      const listItems = document.querySelectorAll('.resource-section ul li');
+      listItems.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(searchTerm) ? 'block' : 'none';
+      });
+    });
+
+    function filterCategory(category) {
+      const sections = {
+        emergency: 0,
+        apps: 1,
+        ngos: 2,
+        defense: 3,
+        cyber: 4,
+        legal: 5
+      };
+      const allSections = document.querySelectorAll('.resource-section');
+      allSections.forEach((section, index) => {
+        if (category === 'all' || index === sections[category]) {
+          section.style.display = 'block';
+        } else {
+          section.style.display = 'none';
+        }
+      });
+    }
+
+    document.querySelectorAll('.resource-section ul li').forEach(li => {
+      li.addEventListener('click', () => {
+        li.style.backgroundColor = '#ffe4ec';
+        setTimeout(() => {
+          li.style.backgroundColor = '';
+        }, 500);
+      });
+    });
+  </script>
+</body>
+</html>

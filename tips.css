@@ -1,0 +1,233 @@
+/* General Body Styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fef6ff;
+  color: #333;
+}
+
+/* Navbar */
+nav {
+  background-color: #dcd0ff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4b0082;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #4b0082;
+  font-weight: 500;
+  margin-left: 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #6a0dad;
+}
+
+/* Header */
+header {
+  background-color: #fef6ff;
+  color:  #6a0dad;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  margin: 20px auto;
+  text-align: center;
+  max-width: 800px;
+}
+
+.filter-buttons button {
+  margin: 5px;
+  padding: 10px 16px;
+  border: none;
+  background-color: #6a5acd;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.filter-buttons button:hover {
+  background-color: #b9a9ff;
+}
+
+/* Tips */
+.tip-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.tip-card {
+  background: white;
+  width: 250px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  font-size: 16px;
+  animation: fadeIn 0.5s ease;
+  text-align: center
+}
+
+.tip-card:hover {
+  transform: translateY(-6px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Checklist Section */
+.checklist-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f2edff;
+  border: 2px solid #d4c8ff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.checklist-section h2 {
+  color: #4b0082;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.checklist-subtext {
+  text-align: center;
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.checklist-category h3 {
+  color: #6a5acd;
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+.checklist {
+  list-style: none;
+  padding-left: 0;
+}
+
+.checklist li {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.checklist input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+  accent-color: #6a5acd;
+}
+
+/* Buttons */
+
+.checklist-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* spacing between buttons */
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.checklist-buttons button {
+  display: inline-block;
+}
+
+
+button {
+  background-color: #a18aff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin: 10px 5px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #7e65e6;
+}
+
+/* History Section */
+#historySection {
+  background-color: #f4f1fc;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 30px auto 60px;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+#historySection h3 {
+  color: #5c3dad;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#historySection ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #333;
+}
+
+#historySection strong {
+  display: block;
+  margin-top: 15px;
+  font-size: 16px;
+  color: #4b0082;
+}
+
+/* Footer */
+footer {
+  background-color: #dcd0ff;
+  color: #4b0082;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  margin-top: 40px;
+}

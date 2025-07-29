@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quick Safety Tips</title>
+  <link rel="stylesheet" href="tips.css" />
+</head>
+<body>
+   <nav>
+    <div class="logo">SafeSteps</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="selfdefense.html">Self-Defense</a>
+      <a href="legalrights.html">Legal Rights</a>
+      <a href="#">Emergency Help</a>
+      <a href="resources.html">Resources</a>
+    </div>
+  </nav>
+  <header>
+    <h1>Quick Safety Tips</h1>
+    <p>Select a category or shuffle for a random tip!</p>
+  </header>
+
+  <div class="filter-buttons">
+    <button onclick="filterTips('all')">All</button>
+    <button onclick="filterTips('travel')">Travel</button>
+    <button onclick="filterTips('home')">At Home</button>
+    <button onclick="filterTips('online')">Online</button>
+    <button onclick="filterTips('night')">Night Safety</button>
+    <button class="shuffle" onclick="showRandomTip()">🎲 Shuffle Tip</button>
+  </div>
+
+  <div class="tip-container" id="tipContainer">
+    <!-- Tips inserted via JavaScript -->
+  </div>
+
+  <!-- 📝 Safety Checklist Section -->
+<!-- 📝 Daily Safety Checklist -->
+<!-- 📝 Daily Safety Checklist -->
+<section class="checklist-section">
+  <h2>📝 Daily Safety Checklist</h2>
+  <p class="checklist-subtext">Tick off what you’ve done today! Your progress will be saved even after you close this tab.</p>
+
+  <!-- Traveling -->
+  <div class="checklist-category">
+    <h3>🚶 While Traveling</h3>
+    <ul class="checklist">
+      <li><input type="checkbox" id="chk1"><label for="chk1">Phone fully charged</label></li>
+      <li><input type="checkbox" id="chk2"><label for="chk2">Power bank packed</label></li>
+      <li><input type="checkbox" id="chk3"><label for="chk3">Shared route & ETA with trusted contact</label></li>
+      <li><input type="checkbox" id="chk4"><label for="chk4">Emergency contacts saved in speed dial</label></li>
+      <li><input type="checkbox" id="chk5"><label for="chk5">Checked area safety before arrival</label></li>
+      <li><input type="checkbox" id="chk6"><label for="chk6">Sat near well-lit/visible areas in public transport</label></li>
+    </ul>
+  </div>
+
+  <!-- At Home -->
+  <div class="checklist-category">
+    <h3>🏠 At Home</h3>
+    <ul class="checklist">
+      <li><input type="checkbox" id="chk7"><label for="chk7">Doors & windows locked</label></li>
+      <li><input type="checkbox" id="chk8"><label for="chk8">Strangers verified before opening door</label></li>
+      <li><input type="checkbox" id="chk9"><label for="chk9">Valuables not visible from outside</label></li>
+      <li><input type="checkbox" id="chk10"><label for="chk10">Gas stoves, iron, appliances switched off when leaving</label></li>
+    </ul>
+  </div>
+
+  <!-- Online Safety -->
+  <div class="checklist-category">
+    <h3>🌐 Online Safety</h3>
+    <ul class="checklist">
+      <li><input type="checkbox" id="chk11"><label for="chk11">Avoided suspicious links/emails</label></li>
+      <li><input type="checkbox" id="chk12"><label for="chk12">Updated device OS & antivirus</label></li>
+      <li><input type="checkbox" id="chk13"><label for="chk13">Used strong, unique passwords</label></li>
+      <li><input type="checkbox" id="chk14"><label for="chk14">Cleared browsing data on public/shared devices</label></li>
+    </ul>
+  </div>
+
+  <!-- Going Out at Night -->
+  <div class="checklist-category">
+    <h3>🌙 Before Going Out at Night</h3>
+    <ul class="checklist">
+      <li><input type="checkbox" id="chk15"><label for="chk15">Shared plan with someone trusted</label></li>
+      <li><input type="checkbox" id="chk16"><label for="chk16">Whistle or pepper spray carried</label></li>
+      <li><input type="checkbox" id="chk17"><label for="chk17">Stayed in well-lit, busy areas</label></li>
+    </ul>
+  </div>
+
+  <!-- In Public Spaces -->
+  <div class="checklist-category">
+    <h3>🚇 In Public Spaces</h3>
+    <ul class="checklist">
+      <li><input type="checkbox" id="chk18"><label for="chk18">Avoided using phone while walking</label></li>
+      <li><input type="checkbox" id="chk19"><label for="chk19">Carried bag securely & zipped</label></li>
+      <li><input type="checkbox" id="chk20"><label for="chk20">Trusted your gut & avoided risky shortcuts</label></li>
+    </ul>
+  </div>
+
+  <!-- Social Media -->
+  <div class="checklist-category">
+    <h3>📱 Social Media Usage</h3>
+    <ul class="checklist">
+      <li><input type="checkbox" id="chk21"><label for="chk21">Turned off location on posts</label></li>
+      <li><input type="checkbox" id="chk22"><label for="chk22">Ignored follow requests from strangers</label></li>
+      <li><input type="checkbox" id="chk23"><label for="chk23">Avoided posting routine in real-time</label></li>
+    </ul>
+  </div>
+
+  <!-- Mental Awareness -->
+  <div class="checklist-category">
+    <h3>🧠 Awareness & Intuition</h3>
+    <ul class="checklist">
+      <li><input type="checkbox" id="chk24"><label for="chk24">Stayed aware of surroundings</label></li>
+      <li><input type="checkbox" id="chk25"><label for="chk25">Avoided distractions (earphones, deep texting)</label></li>
+      <li><input type="checkbox" id="chk26"><label for="chk26">Trusted instincts & exited unsafe situations</label></li>
+    </ul>
+  </div>
+
+  <div class="checklist-buttons">
+    <button onclick="resetChecklist()">🔄 Reset All</button>
+  </div>
+</section>
+
+<button onclick="saveDailyChecklist()">💾 Save Today's Checklist</button>
+<button onclick="viewHistory()">📅 View History</button>
+<div id="historySection" style="margin-top: 20px;"></div>
+
+
+
+<footer>
+    <div class="footer-links">
+      <a href="#">Home</a> | 
+      <a href="#">Tips</a> | 
+      <a href="#">Legal</a> | 
+      <a href="#">Emergency</a> | 
+      <a href="#">Resources</a>
+    </div>
+    <p>Made with ❤️ by Shreya Chakraborty</p>
+    <small>Disclaimer: For awareness purposes only. Not a legal substitute.</small>
+  </footer>
+
+  <script src="tips.js"></script>
+</body>
+</html>
