@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | SafeSteps</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #dcd0ff, #fef6ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .auth-container {
+      background-color: white;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #4b0082;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #6a5acd;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #5848c2;
+    }
+
+    .toggle {
+      margin-top: 15px;
+      text-align: center;
+      color: #6a0dad;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .error-message {
+      color: red;
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 500px) {
+      .auth-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="auth-container">
+    <h2 id="formTitle">Login</h2>
+    <div class="error-message" id="errorBox"></div>
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <button onclick="handleAuth()">Login</button>
+    <div class="toggle" onclick="toggleMode()">Don't have an account? Sign up</div>
+  </div>
+
+  <!-- Firebase SDK (compat version for easier syntax) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+  <script>
+    // Firebase Config (same as used in index.html)
+    const firebaseConfig = {
+      apiKey: "AIzaSyCIXJT5Mv25W9T7oIX0J9bjbniPCF9N6YU",
+      authDomain: "safesteps-d0d2d.firebaseapp.com",
+      projectId: "safesteps-d0d2d",
+      storageBucket: "safesteps-d0d2d.appspot.com",
+      messagingSenderId: "596752059888",
+      appId: "1:596752059888:web:2e591dec6af940657ba135"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    let isLogin = true;
+
+    function toggleMode() {
+      isLogin = !isLogin;
+      document.getElementById("formTitle").innerText = isLogin ? "Login" : "Sign Up";
+      document.querySelector("button").innerText = isLogin ? "Login" : "Sign Up";
+      document.querySelector(".toggle").innerText = isLogin
+        ? "Don't have an account? Sign up"
+        : "Already have an account? Login";
+      document.getElementById("errorBox").innerText = "";
+    }
+
+    function handleAuth() {
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const errorBox = document.getElementById("errorBox");
+
+      if (!email || !password) {
+        errorBox.innerText = "Please fill in all fields.";
+        return;
+      }
+
+      errorBox.innerText = "";
+
+      if (isLogin) {
+        auth.signInWithEmailAndPassword(email, password)
+          .then(() => window.location.href = "index.html")
+          .catch(err => errorBox.innerText = err.message);
+      } else {
+        auth.createUserWithEmailAndPassword(email, password)
+          .then(() => window.location.href = "index.html")
+          .catch(err => errorBox.innerText = err.message);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -204,11 +204,12 @@
   <nav>
     <div class="logo">SafeSteps</div>
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="selfdefense.html">Self-Defense</a>
-      <a href="legalrights.html">Legal Rights</a>
-      <a href="emergency.html">Emergency Help</a>
-      <a href="resources.html">Resources</a>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="auth.html" id="authLink">Login</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="legalrights.html">Legal Rights</a></li>
+        <li><a href="emergency.html">Emergency</a></li>
+        <li><a href="resources.html">Resources</a></li>
     </div>
   </nav>
 
@@ -371,5 +372,44 @@
       });
     });
   </script>
+  <!-- Firebase App (required) -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+<script>
+  // Your Firebase config
+  const firebaseConfig = { 
+  apiKey: "AIzaSyCIXJT5Mv25W9T7oIX0J9bjbniPCF9N6YU",
+  authDomain: "safesteps-d0d2d.firebaseapp.com",
+  projectId: "safesteps-d0d2d",
+  storageBucket: "safesteps-d0d2d.firebasestorage.app",
+  messagingSenderId: "596752059888",
+  appId: "1:596752059888:web:2e591dec6af940657ba135"
+    // (Add other keys as required)
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Handle navbar auth link
+  firebase.auth().onAuthStateChanged(function(user) {
+    const authLink = document.getElementById('authLink');
+    if (!authLink) return;
+
+    if (user) {
+      authLink.textContent = 'Logout';
+      authLink.href = '#';
+      authLink.onclick = (e) => {
+        e.preventDefault();
+        firebase.auth().signOut().then(() => {
+          window.location.reload();
+        });
+      };
+    } else {
+      authLink.textContent = 'Login';
+      authLink.href = 'auth.html';
+    }
+  });
+</script>
 </body>
 </html>

@@ -7,16 +7,18 @@
   <link rel="stylesheet" href="tips.css" />
 </head>
 <body>
-   <nav>
+  <nav>
     <div class="logo">SafeSteps</div>
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="selfdefense.html">Self-Defense</a>
-      <a href="legalrights.html">Legal Rights</a>
-      <a href="emergency.html">Emergency Help</a>
-      <a href="resources.html">Resources</a>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="auth.html" id="authLink">Login</a></li>
+      <li><a href="tips.html">Tips</a></li>
+      <li><a href="legalrights.html">Legal Rights</a></li>
+      <li><a href="emergency.html">Emergency</a></li>
+      <li><a href="resources.html">Resources</a></li>
     </div>
   </nav>
+
   <header>
     <h1>Quick Safety Tips</h1>
     <p>Select a category or shuffle for a random tip!</p>
@@ -36,99 +38,95 @@
   </div>
 
   <!-- 📝 Safety Checklist Section -->
-<!-- 📝 Daily Safety Checklist -->
-<!-- 📝 Daily Safety Checklist -->
-<section class="checklist-section">
-  <h2>📝 Daily Safety Checklist</h2>
-  <p class="checklist-subtext">Tick off what you’ve done today! Your progress will be saved even after you close this tab.</p>
+  <section class="checklist-section">
+    <h2>📝 Daily Safety Checklist</h2>
+    <p class="checklist-subtext">Tick off what you’ve done today! Your progress will be saved even after you close this tab.</p>
 
-  <!-- Traveling -->
-  <div class="checklist-category">
-    <h3>🚶 While Traveling</h3>
-    <ul class="checklist">
-      <li><input type="checkbox" id="chk1"><label for="chk1">Phone fully charged</label></li>
-      <li><input type="checkbox" id="chk2"><label for="chk2">Power bank packed</label></li>
-      <li><input type="checkbox" id="chk3"><label for="chk3">Shared route & ETA with trusted contact</label></li>
-      <li><input type="checkbox" id="chk4"><label for="chk4">Emergency contacts saved in speed dial</label></li>
-      <li><input type="checkbox" id="chk5"><label for="chk5">Checked area safety before arrival</label></li>
-      <li><input type="checkbox" id="chk6"><label for="chk6">Sat near well-lit/visible areas in public transport</label></li>
-    </ul>
-  </div>
+    <!-- Traveling -->
+    <div class="checklist-category">
+      <h3>🚶 While Traveling</h3>
+      <ul class="checklist">
+        <li><input type="checkbox" id="chk1"><label for="chk1">Phone fully charged</label></li>
+        <li><input type="checkbox" id="chk2"><label for="chk2">Power bank packed</label></li>
+        <li><input type="checkbox" id="chk3"><label for="chk3">Shared route & ETA with trusted contact</label></li>
+        <li><input type="checkbox" id="chk4"><label for="chk4">Emergency contacts saved in speed dial</label></li>
+        <li><input type="checkbox" id="chk5"><label for="chk5">Checked area safety before arrival</label></li>
+        <li><input type="checkbox" id="chk6"><label for="chk6">Sat near well-lit/visible areas in public transport</label></li>
+      </ul>
+    </div>
 
-  <!-- At Home -->
-  <div class="checklist-category">
-    <h3>🏠 At Home</h3>
-    <ul class="checklist">
-      <li><input type="checkbox" id="chk7"><label for="chk7">Doors & windows locked</label></li>
-      <li><input type="checkbox" id="chk8"><label for="chk8">Strangers verified before opening door</label></li>
-      <li><input type="checkbox" id="chk9"><label for="chk9">Valuables not visible from outside</label></li>
-      <li><input type="checkbox" id="chk10"><label for="chk10">Gas stoves, iron, appliances switched off when leaving</label></li>
-    </ul>
-  </div>
+    <!-- At Home -->
+    <div class="checklist-category">
+      <h3>🏠 At Home</h3>
+      <ul class="checklist">
+        <li><input type="checkbox" id="chk7"><label for="chk7">Doors & windows locked</label></li>
+        <li><input type="checkbox" id="chk8"><label for="chk8">Strangers verified before opening door</label></li>
+        <li><input type="checkbox" id="chk9"><label for="chk9">Valuables not visible from outside</label></li>
+        <li><input type="checkbox" id="chk10"><label for="chk10">Gas stoves, iron, appliances switched off when leaving</label></li>
+      </ul>
+    </div>
 
-  <!-- Online Safety -->
-  <div class="checklist-category">
-    <h3>🌐 Online Safety</h3>
-    <ul class="checklist">
-      <li><input type="checkbox" id="chk11"><label for="chk11">Avoided suspicious links/emails</label></li>
-      <li><input type="checkbox" id="chk12"><label for="chk12">Updated device OS & antivirus</label></li>
-      <li><input type="checkbox" id="chk13"><label for="chk13">Used strong, unique passwords</label></li>
-      <li><input type="checkbox" id="chk14"><label for="chk14">Cleared browsing data on public/shared devices</label></li>
-    </ul>
-  </div>
+    <!-- Online Safety -->
+    <div class="checklist-category">
+      <h3>🌐 Online Safety</h3>
+      <ul class="checklist">
+        <li><input type="checkbox" id="chk11"><label for="chk11">Avoided suspicious links/emails</label></li>
+        <li><input type="checkbox" id="chk12"><label for="chk12">Updated device OS & antivirus</label></li>
+        <li><input type="checkbox" id="chk13"><label for="chk13">Used strong, unique passwords</label></li>
+        <li><input type="checkbox" id="chk14"><label for="chk14">Cleared browsing data on public/shared devices</label></li>
+      </ul>
+    </div>
 
-  <!-- Going Out at Night -->
-  <div class="checklist-category">
-    <h3>🌙 Before Going Out at Night</h3>
-    <ul class="checklist">
-      <li><input type="checkbox" id="chk15"><label for="chk15">Shared plan with someone trusted</label></li>
-      <li><input type="checkbox" id="chk16"><label for="chk16">Whistle or pepper spray carried</label></li>
-      <li><input type="checkbox" id="chk17"><label for="chk17">Stayed in well-lit, busy areas</label></li>
-    </ul>
-  </div>
+    <!-- Going Out at Night -->
+    <div class="checklist-category">
+      <h3>🌙 Before Going Out at Night</h3>
+      <ul class="checklist">
+        <li><input type="checkbox" id="chk15"><label for="chk15">Shared plan with someone trusted</label></li>
+        <li><input type="checkbox" id="chk16"><label for="chk16">Whistle or pepper spray carried</label></li>
+        <li><input type="checkbox" id="chk17"><label for="chk17">Stayed in well-lit, busy areas</label></li>
+      </ul>
+    </div>
 
-  <!-- In Public Spaces -->
-  <div class="checklist-category">
-    <h3>🚇 In Public Spaces</h3>
-    <ul class="checklist">
-      <li><input type="checkbox" id="chk18"><label for="chk18">Avoided using phone while walking</label></li>
-      <li><input type="checkbox" id="chk19"><label for="chk19">Carried bag securely & zipped</label></li>
-      <li><input type="checkbox" id="chk20"><label for="chk20">Trusted your gut & avoided risky shortcuts</label></li>
-    </ul>
-  </div>
+    <!-- In Public Spaces -->
+    <div class="checklist-category">
+      <h3>🚇 In Public Spaces</h3>
+      <ul class="checklist">
+        <li><input type="checkbox" id="chk18"><label for="chk18">Avoided using phone while walking</label></li>
+        <li><input type="checkbox" id="chk19"><label for="chk19">Carried bag securely & zipped</label></li>
+        <li><input type="checkbox" id="chk20"><label for="chk20">Trusted your gut & avoided risky shortcuts</label></li>
+      </ul>
+    </div>
 
-  <!-- Social Media -->
-  <div class="checklist-category">
-    <h3>📱 Social Media Usage</h3>
-    <ul class="checklist">
-      <li><input type="checkbox" id="chk21"><label for="chk21">Turned off location on posts</label></li>
-      <li><input type="checkbox" id="chk22"><label for="chk22">Ignored follow requests from strangers</label></li>
-      <li><input type="checkbox" id="chk23"><label for="chk23">Avoided posting routine in real-time</label></li>
-    </ul>
-  </div>
+    <!-- Social Media -->
+    <div class="checklist-category">
+      <h3>📱 Social Media Usage</h3>
+      <ul class="checklist">
+        <li><input type="checkbox" id="chk21"><label for="chk21">Turned off location on posts</label></li>
+        <li><input type="checkbox" id="chk22"><label for="chk22">Ignored follow requests from strangers</label></li>
+        <li><input type="checkbox" id="chk23"><label for="chk23">Avoided posting routine in real-time</label></li>
+      </ul>
+    </div>
 
-  <!-- Mental Awareness -->
-  <div class="checklist-category">
-    <h3>🧠 Awareness & Intuition</h3>
-    <ul class="checklist">
-      <li><input type="checkbox" id="chk24"><label for="chk24">Stayed aware of surroundings</label></li>
-      <li><input type="checkbox" id="chk25"><label for="chk25">Avoided distractions (earphones, deep texting)</label></li>
-      <li><input type="checkbox" id="chk26"><label for="chk26">Trusted instincts & exited unsafe situations</label></li>
-    </ul>
-  </div>
+    <!-- Mental Awareness -->
+    <div class="checklist-category">
+      <h3>🧠 Awareness & Intuition</h3>
+      <ul class="checklist">
+        <li><input type="checkbox" id="chk24"><label for="chk24">Stayed aware of surroundings</label></li>
+        <li><input type="checkbox" id="chk25"><label for="chk25">Avoided distractions (earphones, deep texting)</label></li>
+        <li><input type="checkbox" id="chk26"><label for="chk26">Trusted instincts & exited unsafe situations</label></li>
+      </ul>
+    </div>
 
-  <div class="checklist-buttons">
-    <button onclick="resetChecklist()">🔄 Reset All</button>
-  </div>
-</section>
+    <div class="checklist-buttons">
+      <button onclick="resetChecklist()">🔄 Reset All</button>
+    </div>
+  </section>
 
-<button onclick="saveDailyChecklist()">💾 Save Today's Checklist</button>
-<button onclick="viewHistory()">📅 View History</button>
-<div id="historySection" style="margin-top: 20px;"></div>
+  <button onclick="saveDailyChecklist()">💾 Save Today's Checklist</button>
+  <button onclick="viewHistory()">📅 View History</button>
+  <div id="historySection" style="margin-top: 20px;"></div>
 
-
-
-<footer>
+  <footer>
     <div class="footer-links">
       <a href="index.html">Home</a> | 
       <a href="tips.html">Tips</a> | 
@@ -140,6 +138,45 @@
     <small>Disclaimer: For awareness purposes only. Not a legal substitute.</small>
   </footer>
 
+  <!-- ✅ Load Firebase Scripts First -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <!-- ✅ Initialize Firebase BEFORE tips.js -->
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCIXJT5Mv25W9T7oIX0J9bjbniPCF9N6YU",
+      authDomain: "safesteps-d0d2d.firebaseapp.com",
+      projectId: "safesteps-d0d2d",
+      storageBucket: "safesteps-d0d2d.firebasestorage.app",
+      messagingSenderId: "596752059888",
+      appId: "1:596752059888:web:2e591dec6af940657ba135"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      const authLink = document.getElementById('authLink');
+      if (!authLink) return;
+
+      if (user) {
+        authLink.textContent = 'Logout';
+        authLink.href = '#';
+        authLink.onclick = (e) => {
+          e.preventDefault();
+          firebase.auth().signOut().then(() => {
+            window.location.reload();
+          });
+        };
+      } else {
+        authLink.textContent = 'Login';
+        authLink.href = 'auth.html';
+      }
+    });
+  </script>
+
+  <!-- ✅ Load LAST: tips.js uses Firebase -->
   <script src="tips.js"></script>
 </body>
 </html>
