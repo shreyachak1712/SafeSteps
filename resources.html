@@ -207,7 +207,7 @@
       <a href="index.html">Home</a>
       <a href="selfdefense.html">Self-Defense</a>
       <a href="legalrights.html">Legal Rights</a>
-      <a href="#">Emergency Help</a>
+      <a href="emergency.html">Emergency Help</a>
       <a href="resources.html">Resources</a>
     </div>
   </nav>
@@ -229,6 +229,7 @@
       <button onclick="filterCategory('defense')" class="filter-btn">Self-Defense</button>
       <button onclick="filterCategory('cyber')" class="filter-btn">Cyber Safety</button>
       <button onclick="filterCategory('legal')" class="filter-btn">Legal Help</button>
+      <button onclick="filterCategory('downloads')" class="filter-btn">Downloadables</button>
     </div>
 
     <!-- Emergency Contacts -->
@@ -295,10 +296,10 @@
         <li><a href="https://www.indiankanoon.org/" target="_blank">Indian Kanoon</a> – Search Indian laws</li>
       </ul>
     </div>
-  </div>
+  
 
     <div class="resource-section" id="downloads">
-  <h3>Downloadable Guides & Checklists</h3>
+  <h3>Downloadable Guides</h3>
   <ul class="download-list">
     <li>
       <strong>Legal Rights Guide (India)</strong>
@@ -315,13 +316,15 @@
   </ul>
 </div>
 
+</div>
+
   <!-- Footer -->
   <footer>
     <div class="footer-links">
       <a href="index.html">Home</a> | 
       <a href="tips.html">Tips</a> | 
       <a href="legalrights.html">Legal</a> | 
-      <a href="#">Emergency</a> | 
+      <a href="emergency.html">Emergency</a> | 
       <a href="resources.html">Resources</a>
     </div>
     <p>Made with ❤️ by Shreya Chakraborty</p>
@@ -346,7 +349,8 @@
         ngos: 2,
         defense: 3,
         cyber: 4,
-        legal: 5
+        legal: 5,
+        downloads: 6
       };
       const allSections = document.querySelectorAll('.resource-section');
       allSections.forEach((section, index) => {

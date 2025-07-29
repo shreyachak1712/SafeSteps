@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emergency Help | SafeSteps</title>
+  <link rel="stylesheet" href="emergency.css" />
+</head>
+<body>
+  <header>
+    <h1>🚨 Emergency Help</h1>
+    <p>Act fast. Tap to call or share your location.</p>
+  </header>
+
+  <section class="emergency-buttons">
+    <a href="tel:9321576954" class="emergency-btn">📞 Call 112 (Emergency)</a>
+    <a href="tel:100" class="emergency-btn">📞 Call Police (100)</a>
+    <a href="tel:1091" class="emergency-btn">📞 Women’s Helpline (1091)</a>
+    <a href="tel:102" class="emergency-btn">📞 Ambulance (102)</a>
+  </section>
+
+  <section class="location-share">
+    <h2>📍 Share Live Location</h2>
+    <button onclick="shareLocation()">🔗 Copy Location for WhatsApp</button>
+    <p id="locationStatus"></p>
+  </section>
+
+  <section class="trusted-contacts">
+    <h2>👥 Trusted Contacts</h2>
+    <input type="text" id="contactName" placeholder="Name" />
+    <input type="tel" id="contactNumber" placeholder="Phone Number" />
+    <button onclick="addContact()">➕ Add Contact</button>
+    <div id="contactList"></div>
+  </section>
+
+  <section class="quick-tips">
+    <h2>Quick Safety Tips</h2>
+    <ul>
+      <li>Stay in well-lit areas</li>
+      <li>Don't hesitate to call for help</li>
+      <li>Use a personal safety alarm if possible</li>
+      <li>Trust your instincts</li>
+    </ul>
+  </section>
+
+  
+
+  <script src="emergency.js"></script>
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a> | 
+      <a href="tips.html">Tips</a> | 
+      <a href="legalrights.html">Legal</a> | 
+      <a href="#">Emergency</a> | 
+      <a href="resources.html">Resources</a>
+    </div>
+    <p>Made with ❤️ by Shreya Chakraborty</p>
+    <small>Only for awareness. Not a substitute for emergency services.</small>
+  </footer>
+</body>
+</html>
